@@ -1,0 +1,29 @@
+<%- include("../partials/header", { user: user }) %>
+
+<h2>Danh sách nhà cung cấp</h2>
+<a href="/suppliers/add">Thêm nhà cung cấp</a>
+<table border="1">
+  <thead>
+    <tr>
+      <th>Tên</th>
+      <th>Địa chỉ</th>
+      <th>Điện thoại</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% suppliers.forEach(s => { %>
+      <tr>
+        <td><%= s.name %></td>
+        <td><%= s.address %></td>
+        <td><%= s.phone %></td>
+        <td>
+          <a href="/suppliers/edit/<%= s._id %>">Sửa</a> |
+          <a href="/suppliers/delete/<%= s._id %>">Xóa</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include("../partials/footer") %>

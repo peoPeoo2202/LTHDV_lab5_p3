@@ -1,0 +1,12 @@
+<%- include("../layout/header", { user: user }) %>
+
+<h2>Thông tin người dùng</h2>
+<p>Username: <%= user.username %></p>
+<p>Email: <%= user.email %></p>
+<p>Phone: <%= user.phone %></p>
+
+<form action="/logout" method="POST">
+  <button type="submit">Đăng xuất</button>
+</form>
+
+<%- include("../layout/footer") %>
